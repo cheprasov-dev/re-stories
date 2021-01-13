@@ -1,0 +1,8 @@
+.personal_account {
+    width: 28px;
+    height: 28px;
+    background-image: url('./personal_account.svg');
+    background-size: cover;
+    background-position: center;
+    margin: 10px;
+}

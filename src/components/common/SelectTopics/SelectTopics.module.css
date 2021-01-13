@@ -1,0 +1,6 @@
+.container * {
+    background-color: #FFEFDB;
+    border-radius: 10px;
+    --text_primary: #FF921D;
+    --icon_secondary: #FF921D;
+}

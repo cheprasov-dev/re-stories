@@ -1,0 +1,14 @@
+.center_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 90vh;
+}
+
+.text {
+    font-weight: 500;
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 40px;
+}

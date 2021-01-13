@@ -1,0 +1,7 @@
+.container_page {
+  display: flex;
+  flex-direction: column;
+  --text_primary: #ffffff;
+  background-color: #5D2AD6;
+  --activity_indicator_tint: #14CEDF;
+}

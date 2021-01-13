@@ -1,0 +1,43 @@
+.text_title_contest {
+  padding: 12px 12px 12px 12px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 28px;
+  color: #ffffff;
+}
+
+.text {
+  padding: 0 12px;
+}
+
+#collapsed {
+  overflow: hidden;
+  max-height: 115px;
+  background: linear-gradient(rgb(209, 190, 255) 50%, rgba(93, 42, 214, 0) 100%);
+  -webkit-background-clip: text;
+  color: rgba(255, 255, 255, 1);
+}
+
+#deployed {
+  color: #fff;
+  max-height: none;
+  overflow: unset;
+}
+
+.textButton {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 22px;
+  color: #14CEDF;
+  user-select: none;
+  width: max-content;
+  -webkit-user-select: none;
+}
+
+#button_hide_text {
+  display: none;
+}
+
+#button_read_more {
+  width: max-content;
+}

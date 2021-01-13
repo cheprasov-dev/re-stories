@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    min-width: 170px;
+    height: 32px;
+    border-radius: 16px;
+
+    background-color: #FFEFDB;
+    color: #FF921D;
+}
+
+.container img {
+    margin: 5px;
+}

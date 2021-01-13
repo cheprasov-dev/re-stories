@@ -1,0 +1,30 @@
+.container {
+    box-sizing: border-box;
+    padding: 8px 6px;
+}
+
+.wrapper {
+    margin-bottom: 10px;
+}
+
+.wrapper_title * {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+@media (min-width: 351px) {
+    .interval {
+        margin-left: 10px;
+    }
+    .wrapper {
+        display: flex;
+    }
+}
+
+@media (max-width: 350px) {
+    .interval {
+        margin-top: 10px;
+    }
+
+}

@@ -1,0 +1,20 @@
+.button_container {
+  margin: 12px 12px 0 12px;
+  height: 52px;
+  border-radius: 10px;
+  --content_placeholder_icon: #5D2AD6;
+  :global {
+    .Button__in {
+      justify-content: space-between;
+      height: 100%;
+    }
+  }
+}
+
+.text {
+  margin: 12px;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  color: #fff;
+}

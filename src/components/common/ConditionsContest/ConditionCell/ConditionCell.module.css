@@ -1,0 +1,14 @@
+.container {
+  --separator_common : #652EEA;
+}
+
+.icon {
+  padding: 0;
+}
+
+.text {
+  color: #fff;
+  padding: 6px 12px;
+  font-size: 16px;
+  line-height: 22px;
+}

@@ -1,0 +1,7 @@
+.container_page {
+  display: flex;
+  flex-direction: column;
+}
+.wrapper {
+  background-color: #5D2AD6;
+}

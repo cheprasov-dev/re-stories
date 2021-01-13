@@ -1,0 +1,15 @@
+.container {
+  --text_primary: #fff;
+  --text_secondary: #A782FF;
+  --separator_common: #652EEA;
+  /* margin: 2px 0; */
+  :global {
+    img {
+      object-fit: cover;
+    }
+  }
+}
+
+.wrapper_sticker {
+  margin-left: 4px;
+}

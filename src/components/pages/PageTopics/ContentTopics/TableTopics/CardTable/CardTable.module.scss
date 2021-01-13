@@ -1,0 +1,52 @@
+
+.card_elem {
+  height: 100px;
+  border-radius: inherit;
+  background-position: center;
+  background-size: cover;
+}
+
+.container {
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  min-height: 20px;
+  max-height: max-content;
+  max-width: 85%;
+  padding: 0 10px;
+  background-color: rgba(31, 31, 31, .5);
+  border-radius: 4px;
+}
+
+.text {
+  color: #fff;
+  font-size: 16px;
+  line-height: 22px;
+  text-align: center;
+}
+
+@media(max-width: 385px) {
+  .text {
+    font-size: 15px;
+  }
+  .container {
+    padding: 0 8px;
+  }
+}
+@media(max-width: 355px) {
+  .text {
+    font-size: 14px;
+  }
+}
+@media(max-width: 335px) {
+  .text {
+    font-size: 13px;
+  }
+}
+
+@media(max-width: 318px) {
+  .text {
+    font-size: 12px;
+  }
+}
