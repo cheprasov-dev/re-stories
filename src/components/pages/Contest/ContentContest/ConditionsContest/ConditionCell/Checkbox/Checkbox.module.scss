@@ -1,0 +1,41 @@
+.wrapper {
+  height: 24px;
+  width: 24px;
+  color: #ffffff;
+
+  border-radius: 100%;
+
+  .checkOn {
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+    background-color: #FF921D;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .mark {
+      width: 14px;
+      height: 10px;
+      background-image: url("./../../../../../../../assets/img/Mark.svg");
+      background-repeat: no-repeat;
+    }
+  }
+
+  .checkOff {
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+    border: 1px solid #ffffff;
+  }
+}
+
+.container {
+  background: #713CF0;
+  align-self: center;
+  border-radius: 100%;
+
+}
+
+
+

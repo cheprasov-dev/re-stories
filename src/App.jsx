@@ -3,36 +3,25 @@ import { useSelector } from 'react-redux'
 import '@vkontakte/vkui/dist/vkui.css'
 import './App.css'
 import {
-  VIEW_PARTICIPANT,
-  PANEL_TOPICS,
-  PANEL_CONTESTS_TOPIC,
-  PANEL_PERSONAL_ACCOUNT,
-  VIEW_CONTEST,
-  PANEL_CONTEST,
-  PANEL_PARTICIPANTS,
-  MODAL_PAGE_PRIZES,
-  MODAL_PAGE_WINNERS,
-  VIEW_TRAINING_SECTION,
-  PANEL_TRAINING_CONTESTS,
-  PANEL_TRAINING_CONDITIONS,
-  PANEL_TRAINING_PRIZES,
+  VIEW_CONTEST, PANEL_PARTICIPANTS, MODAL_PAGE_PRIZES, PANEL_TOPICS, PANEL_TRAINING_PRIZES,
+  VIEW_TRAINING_SECTION, PANEL_TRAINING_CONTESTS, PANEL_TRAINING_CONDITIONS, PANEL_CONTEST,
+  VIEW_PARTICIPANT, PANEL_CONTESTS_TOPIC, PANEL_PERSONAL_ACCOUNT, MODAL_PAGE_WINNERS,
 } from './redux/constants/routingConstants'
 import {
- PageContest, PageTopics, PageContestsTopic, PagePersonalAccount, PageTraining,
+ PageContest, PageTopics, PageContestsTopic, PagePersonalAccount, PageTraining, PageParticipants
 } from './components/pages/exportPage'
 import { Root, View, Panel, ModalRoot, ModalPage } from '@vkontakte/vkui'
-import LoadingPage from './components/common/LoadingPage/LoadingPage'
 import { ModalPrizes, ModalWinners } from './components/modals/exportModalPage'
 import ModalHeaderPage from './components/modals/modalCommon/ModalHeader/ModalHeaderPage/ModalHeaderPage'
 import { useClientIdentification } from './hooks/useClientIdentification'
-import PageParticipants from './components/pages/PageParticipants/PageParticipants'
 import { arrTraining } from './redux/constants/otherConstatnts'
 import { useLocation, useRouter } from '@happysanta/router'
-
-// TODO вывести в компонентах ошибки контактную информацию для связи
+import { LoadingPage } from './components/common/exportCommon'
+import ErrorPage from './components/common/_pages/ErrorPage/ErrorPage'
 
 export default function App () {
   const mainData = useSelector(state => state.dataUser.mainData)
+  const errorInitUser = useSelector(state => state.errors.errorInitUser)
   const location = useLocation()
   const router = useRouter()
 
@@ -59,9 +48,10 @@ export default function App () {
     </ModalRoot>
   )
 
-  if (!mainData) {
-    return <LoadingPage imgBG={true} />
-  }
+//================== П Р Е Д З А Г Р У З О Ч Н Ы Е  R E T U R N =================================//
+
+  if (!mainData && !errorInitUser) return <LoadingPage imgBG={true} />
+  if (errorInitUser) return <ErrorPage isInitError={true} />
 
 //======================= О С Н О В Н О Й  R E T U R N =========================================//
   return (

@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './PlaceholderCustom.module.css'
-import СustomButton from "../../ButtonСustom/ButtonСustom";
+import СustomButton from "../../ButtonCustom/ButtonCustom";
 
 /* (тупой компонент)
     Описание:

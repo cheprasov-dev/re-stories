@@ -152,5 +152,6 @@ export const filterTopics = (idTopics, topics) => {
       if (index === 14) topic.size = 's'
       return topic
     }
+    return 'l'
   })
 }

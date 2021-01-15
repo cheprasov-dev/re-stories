@@ -1,6 +1,6 @@
-export const { default: PageTopics } = require("./PageTopics/PageTopics");
-export const { default: PageContest } = require("./PageContest/PageContest");
-export const { default: PageParticipants } = require("./PageParticipants/PageParticipants");
-export const { default: PageContestsTopic } = require("./PageContestsTopic/PageContestsTopic");
-export const { default: PagePersonalAccount } = require("./PagePersonalAccount/PagePersonalAccount");
-export const { default: PageTraining } = require("./PageTraining/PageTraining");
+export const { default: PageTopics } = require("./Topics/PageTopics");
+export const { default: PageContest } = require("./Contest/PageContest");
+export const { default: PageParticipants } = require("./Participants/PageParticipants");
+export const { default: PageContestsTopic } = require("./ContestsTopic/PageContestsTopic");
+export const { default: PagePersonalAccount } = require("./PersonalAccount/PagePersonalAccount");
+export const { default: PageTraining } = require("./Training/PageTraining");

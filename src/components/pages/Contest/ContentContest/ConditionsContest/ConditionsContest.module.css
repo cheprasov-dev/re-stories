@@ -1,0 +1,16 @@
+.container {
+  background: #713CF0;
+}
+
+.ul_conditions {
+  padding: 0;
+  list-styles-type: none;
+}
+
+.header {
+  padding: 20px 0 0 12px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  color: #fff;
+}

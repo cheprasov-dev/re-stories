@@ -15,7 +15,7 @@ export async function fulfillmentOfConditionsModule(type, idGroup, idContest, ad
     switch (type) {
       case 'conditionSubscribeToNotifications':
         let resSubscribeToNotifications = await subscribeToNotificationsBridge(idGroup)
-        // TODO отправить результат
+        // TODO отправить результат на проверку
         return {
           ...responseModule,
           nameStatus: type,

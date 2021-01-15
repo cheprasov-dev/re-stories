@@ -1,12 +1,6 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import {PanelHeader} from "@vkontakte/vkui";
 import {Background} from "./components/common/exportCommon";
-import {closeModalPage} from "./redux/actionCreators/rouitingActionCreators";
-import {upgradeTextSearchForModal} from "./redux/actionCreators/otherDataActionCreators";
-import {useDispatch} from "react-redux";
-import {closeAlert} from "./redux/actionCreators/alertsActionCreators";
-import {resetConditionsStatuses, resetDataActiveContest} from "./redux/actionCreators/dataContestsActionCreators";
-import {setErrorGetDataContest} from "./redux/actionCreators/errorsActionCreators";
 
 const css = {
   container_page: {
@@ -24,15 +18,6 @@ const css = {
 }
 
 export default function ErrorNet() {
-  const dispatch = useDispatch()
-  useEffect(() => {
-    dispatch(closeModalPage())
-    dispatch(closeAlert())
-    dispatch(resetDataActiveContest())
-    dispatch(upgradeTextSearchForModal(''))
-    dispatch(resetConditionsStatuses())
-    dispatch(setErrorGetDataContest(false))
-  }, [])
   return (
     <React.Fragment>
       <PanelHeader separator={false}>Отсутсует сеть!</PanelHeader> {/* шапка */}

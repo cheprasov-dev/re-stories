@@ -1,26 +1,30 @@
 import bridge from '@vkontakte/vk-bridge'
 
 export async function openingStoryEditorBridge({dataStory, idContest = null}) {
+  const {
+    backgroundType, backgroundStory, movingBackground, degreeRotation, stickerWidth,
+    valueHorizontal, valueVertical, valueAlignment
+  } = dataStory
   const props = {
-    "background_type": `${dataStory.backgroundType}`,
-    "url": `${dataStory.backgroundStory}`,
-    "locked": Boolean(dataStory.movingBackground),
+    "background_type": `${backgroundType}`,
+    "url": `${backgroundStory}`,
+    "locked": Boolean(movingBackground),
     "stickers": [{
       "sticker_type": "renderable",
       "sticker": {
         "content_type": "image",
         "transform": {
-          "rotation": Number(dataStory.degreeRotation),
-          "relation_width": Number(dataStory.stickerWidth),
-          "translation_x": Number(dataStory.valueHorizontal),
-          "translation_y": Number(dataStory.valueVertical),
-          "gravity": `${dataStory.valueAlignment}`,
+          "rotation": Number(degreeRotation),
+          "relation_width": Number(stickerWidth),
+          "translation_x": Number(valueHorizontal),
+          "translation_y": Number(valueVertical),
+          "gravity": `${valueAlignment}`,
         },
         "clickable_zones": [{
           "action_type": "link",
           "tooltip_text_key": "Участвовать",
           "action": {
-            "link": `https://vk.com/app7486100#c=${idContest}&r=story`,
+            "link": `https://vk.com/app${process.env.REACT_APP_APP_ID}#/contest/${idContest}/?r=story`,
             "tooltip_text_key": "open"
           },
           "clickable_area": [

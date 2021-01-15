@@ -30,7 +30,7 @@ export const topics = [
   { id: '2', name: 'Новости', banner: news, },
   { id: '3', name: 'Музыка', banner: music, },
   { id: '4', name: 'Бренды', banner: brands, },
-  { id: '5', name: 'Наука и техно', banner: science, },
+  { id: '5', name: 'Образование', banner: science, },
   { id: '6', name: 'Развлечения', banner: entertainment, },
   { id: '7', name: 'Блогеры', banner: bloggers, },
   { id: '8', name: 'Магазины ', banner: shops, },

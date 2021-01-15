@@ -3,17 +3,16 @@ import BannerContest from './BannerContest/BannerContest'
 import css from './CardPopularContests.module.css'
 import TitleContest from './TitleContest/TitleContest'
 import { StickerCountParticipants, StickerEndContest } from '../../exportCommon'
-import { useDispatch } from 'react-redux'
-import { mainRoute } from '../../../../redux/actionCreators/rouitingActionCreators'
-import { PANEL_CONTEST, VIEW_CONTEST } from '../../../../redux/constants/routingConstants'
+import { PAGE_CONTEST } from '../../../../redux/constants/routingConstants'
+import { useRouter } from '@happysanta/router'
 
 export function CardPopularContests (props) {
   const {dateEndContest, titleContest, contestBanner, countParticipants} = props
+  const router = useRouter()
 
-  const dispatch = useDispatch()
 
-  function onClickOpenContest () {
-    dispatch(mainRoute(VIEW_CONTEST, PANEL_CONTEST))
+  function onClickOpenContest (idContest) {
+    router.pushPage(PAGE_CONTEST, { id: idContest })
   }
 
   return (

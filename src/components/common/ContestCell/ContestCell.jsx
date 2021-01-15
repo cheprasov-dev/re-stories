@@ -22,7 +22,7 @@ import { StickerCountParticipants } from '../exportCommon'
 */
 
 export default function ContestCell (props) {
-  const { id, avatar, name, countParticipants, moderationStatus, nameTopPrize, onClick } = props
+  const { id, avatar, name, countParticipants, nameTopPrize, onClick } = props
   return (
     <div id={id} className={css.container} onClick={onClick}>
       <SimpleCell
@@ -31,7 +31,6 @@ export default function ContestCell (props) {
         after={
           <div className={css.wrapper_sticker}>
             <StickerCountParticipants
-              moderationStatus={moderationStatus}
               countParticipants={countParticipants}
             />
           </div>

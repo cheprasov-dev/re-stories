@@ -14,7 +14,6 @@ import {
   RESET_CONDITIONS_STATUSES,
   RESET_IDS_TOPICS_WITH_CONTESTS,
   SET_DATA_PARTICIPANTS,
-  SET_MODERATOR_COMMENTS,
   SET_PAGE_PARTICIPANTS, SET_COUNT_PARTICIPANTS, RESET_DATA_PARTICIPANTS,
 } from '../actions/dataContestsAction'
 import _isArray from 'lodash/isArray'
@@ -118,12 +117,6 @@ export function dataContestsReducer(state = dataContestsInitState, action) {
       return {
         ...state,
         countParticipants: action.payload.count
-      }
-//--------------------------------------------------------------------------------------------------------------------//
-    case SET_MODERATOR_COMMENTS:
-      return {
-        ...state,
-        moderatorComments: action.payload.comments
       }
 //--------------------------------------------------------------------------------------------------------------------//
     case SET_PAGE_PARTICIPANTS:

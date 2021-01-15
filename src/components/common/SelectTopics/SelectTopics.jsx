@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import { Select, FormLayoutGroup } from '@vkontakte/vkui'
 import styles from './SelectTopics.module.css'
 import PropTypes from 'prop-types'

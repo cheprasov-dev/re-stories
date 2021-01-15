@@ -1,7 +1,6 @@
 import { dataUserInitState } from '../initState'
 import {
-  SET_COUNT_ACTIVE_CONTESTS_USER, SET_VALUE_IS_ADMIN_CONTEST, SET_VALUE_IS_MODERATOR,
-  SET_VALUE_IS_VIEW_TRAINING, UPGRADE_DATA_USER, UPGRADE_TOKEN_USER
+  SET_COUNT_ACTIVE_CONTESTS_USER, SET_DEVICE, SET_SOURCE, UPGRADE_DATA_USER
 } from '../actions/dataUserAction'
 
 export function dataUserReducer (state = dataUserInitState, action) {
@@ -11,32 +10,21 @@ export function dataUserReducer (state = dataUserInitState, action) {
         ...state,
         mainData: action.payload.data,
         isNewUser: action.payload.isNewUser,
-        isViewTraining: action.payload.isViewTraining
-      }
-    case UPGRADE_TOKEN_USER:
-      return {
-        ...state,
-        tokenUser: action.payload.token
       }
     case SET_COUNT_ACTIVE_CONTESTS_USER:
       return {
         ...state,
         countActiveContest: action.payload.count
       }
-    case SET_VALUE_IS_VIEW_TRAINING:
+    case SET_SOURCE:
       return {
         ...state,
-        isViewTraining: action.payload.value
+        source: action.payload.source
       }
-    case SET_VALUE_IS_MODERATOR:
+    case SET_DEVICE:
       return {
         ...state,
-        isModerator: action.payload.value
-      }
-    case SET_VALUE_IS_ADMIN_CONTEST:
-      return {
-        ...state,
-        isAdminContest: action.payload.value
+        device: action.payload.device
       }
     default:
       return state

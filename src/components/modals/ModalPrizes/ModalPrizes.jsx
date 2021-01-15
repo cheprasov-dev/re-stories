@@ -9,9 +9,7 @@ import silverLaurels from '../../../assets/img/prize/silverLaurels.svg'
 import {PrizeCell} from '../../common/exportCommon'
 
 export default function ModalPrizes() {
-  const prizes = useSelector(state => {
-    return state.dataSettingsContest.settingsContest.namesPrizes || state.dataContests.dataActiveContest?.settingsContest.namesPrizes
-  })
+  const prizes = useSelector(state => state.dataContests.dataActiveContest?.settingsContest.namesPrizes)
 
   let jsxPrizes;
 

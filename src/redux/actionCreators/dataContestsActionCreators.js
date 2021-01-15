@@ -13,7 +13,6 @@ import {
   RESET_CONDITIONS_STATUSES,
   RESET_IDS_TOPICS_WITH_CONTESTS,
   SET_DATA_PARTICIPANTS,
-  SET_MODERATOR_COMMENTS,
   SET_PAGE_PARTICIPANTS, SET_COUNT_PARTICIPANTS, RESET_DATA_PARTICIPANTS,
 } from '../actions/dataContestsAction'
 
@@ -67,10 +66,6 @@ export const resetDataParticipants = (data) => ({type: RESET_DATA_PARTICIPANTS, 
 
 export const setCountParticipants = (count) => ({type: SET_COUNT_PARTICIPANTS,  payload: {count}})
 export const setPageParticipants = (page) => ({type: SET_PAGE_PARTICIPANTS, payload: {page}})
-
-//-----------------------------------------------------------------------------
-
-export const setModeratorComments = (comments) => ({type: SET_MODERATOR_COMMENTS, payload: {comments}})
 
 //-----------------------------------------------------------------------------
 

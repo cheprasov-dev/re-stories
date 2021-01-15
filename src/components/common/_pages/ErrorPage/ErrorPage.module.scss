@@ -1,0 +1,17 @@
+.container_page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 90vh;
+  color: #ffffff;
+}
+
+.mainText {
+  font-weight: bold;
+  font-size: 36px;
+  text-align: center;
+}
+.textError {
+  font-size: 20px;
+  text-align: center;
+}
