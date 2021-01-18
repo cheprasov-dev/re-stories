@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   background-color: #5D2AD6;
-  --text_secondary: #ffffff;
 }
 .input {
   --text_primary: #FF921D;
@@ -14,6 +13,7 @@
   bottom: 0;
   left: 0;
   right: 0;
+  z-index: 1000;
 }
 
 .falseBlock {
@@ -21,10 +21,3 @@
   background-color: #5D2AD6;
 }
 
-.organizer {
-  margin-bottom: 10px;
-  a {
-    text-decoration: none;
-    cursor: default;
-  }
-}

@@ -12,7 +12,6 @@ import { useParams } from '@happysanta/router'
 import { getAdsBridge } from '../../../modules/API/bridge/getAdsBridge'
 import { setBlocksAd } from '../../../redux/reducers/adsReducer'
 import { setMainError } from '../../../redux/reducers/errorsReducer'
-import { getDataGroupBridge } from '../../../modules/API/bridge/getDataGroupBridge'
 
 export default function usePageContest () {
   const { id: idActiveContest } = useParams()
@@ -39,8 +38,7 @@ export default function usePageContest () {
         const { data: { error, contest } } = await getDataContestAPI({ idContest: idActiveContest, idUser })
         const { data: { error: errorCond, conditionStatus } } = await getConditionsStatusesAPI(idUser, idActiveContest)
         if (!error && !errorCond) {
-          const dataGroup = await getDataGroupBridge(contest.idGroup)
-          dispatch(setDataActiveContest({ ...contest, dataGroup: { ...dataGroup } }))
+          dispatch(setDataActiveContest(contest))
           dispatch(setConditionsStatuses(conditionStatus))
           const blocksAd = await getAdsBridge()
           dispatch(setBlocksAd(blocksAd))

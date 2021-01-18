@@ -1,6 +1,6 @@
-import React from 'react';
-import styles from "./GroupCell.module.css";
-import { SimpleCell, Avatar } from '@vkontakte/vkui';
+import React from 'react'
+import css from './GroupCell.module.css'
+import { SimpleCell, Avatar } from '@vkontakte/vkui'
 
 /* (тупой компонент)
     Описание:
@@ -22,19 +22,20 @@ import { SimpleCell, Avatar } from '@vkontakte/vkui';
 */
 
 export default function GroupCell (props) {
-    const { id, members_count, photo_100, name, onClick, standartStyle=false } = props;
-    const caseWordsSubscriber = ['подписчиков', 'подписчик', 'подписчика', 'подписчика', 'подписчика', 'подписчиков', 'подписчиков', 'подписчиков', 'подписчиков', 'подписчиков'];
-    return (
-        <React.Fragment>
-            <div id={id} className={standartStyle ? '' : styles.container} onClick={onClick}>
-                <SimpleCell
-                    description={`${members_count} ${caseWordsSubscriber[Number(String(members_count)[String(members_count).length - 1])]}`}
-                    before={<Avatar src={photo_100} />}
-                >
-                    {name}
-                </SimpleCell>
-            </div>
-        </React.Fragment>
-    )
+  const { members_count, photo_100, name, onClick, standardStyle = false } = props
+  const caseWordsSubscriber = ['подписчиков', 'подписчик', 'подписчика', 'подписчика', 'подписчика', 'подписчиков', 'подписчиков', 'подписчиков', 'подписчиков', 'подписчиков']
+
+  return (
+    <React.Fragment>
+      <div className={standardStyle ? '' : css.container} onClick={onClick}>
+        <SimpleCell
+          description={`${members_count} ${caseWordsSubscriber[Number(String(members_count)[String(members_count).length - 1])]}`}
+          before={<Avatar src={photo_100} />}
+        >
+          {name}
+        </SimpleCell>
+      </div>
+    </React.Fragment>
+  )
 }
 

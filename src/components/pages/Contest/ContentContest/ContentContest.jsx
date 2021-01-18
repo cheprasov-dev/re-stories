@@ -1,8 +1,8 @@
 import React from 'react'
-import { Header, PanelHeader, PanelHeaderBack, PromoBanner, } from '@vkontakte/vkui'
+import { PanelHeader, PanelHeaderBack, PromoBanner, } from '@vkontakte/vkui'
 import { useSelector, useDispatch } from 'react-redux'
 import css from './ContentContest.module.scss'
-import { Background, ButtonCustom, HeaderText, GroupCell } from '../../../common/exportCommon'
+import { Background, ButtonCustom, HeaderText } from '../../../common/exportCommon'
 import {
   MODAL_PAGE_PRIZES, MODAL_PAGE_WINNERS, PAGE_PARTICIPANTS, PAGE_TOPICS
 } from '../../../../redux/constants/routingConstants'
@@ -17,6 +17,7 @@ import ConditionsContest from './ConditionsContest/ConditionsContest'
 import { setSource } from '../../../../redux/actionCreators/dataUserActionCreators'
 import { setBlocksAd } from '../../../../redux/reducers/adsReducer'
 import { useMeasure } from 'react-use'
+import OrganizerContest from './OrganizerContest/OrganizerContest'
 /*
     Главный контент страницы PageAnalytics.
 */
@@ -43,6 +44,8 @@ export default function ContentContest () {
     conditionsPostStory, conditionsPostWall, conditionsSubscribeToGroup, conditionsSubscribeToNotifications
   } = settingsContest
 
+  const {screen_name, photo_100, name, members_count} = dataGroup
+
   const timeEndContest = Date.parse(`${settingsContest.dateEndContest}T${settingsContest.timeEndContest}Z`) / 1000
 
   function onClickBack () {
@@ -51,10 +54,6 @@ export default function ContentContest () {
       dispatch(setSource('catalog contests'))
     } else router.popPage()
     dispatch(setDataActiveContest(null))
-  }
-
-  function onClickButtonParticipants () {
-    router.pushPage(PAGE_PARTICIPANTS)
   }
 
   let urlImagAvatar = false
@@ -89,7 +88,7 @@ export default function ContentContest () {
         <ButtonParticipants
           background={'#14CEDF'}
           urlImagAvatar={urlImagAvatar}
-          onClick={onClickButtonParticipants}
+          onClick={() => router.pushPage(PAGE_PARTICIPANTS)}
         />
         {active ?
           <ButtonCustom
@@ -121,15 +120,8 @@ export default function ContentContest () {
           settingsStory={settingsStory}
           idActiveContest={idActiveContest}
         />
-        <div className={css.organizer}>
-          <Header mode="secondary">Организато и ответственный</Header>
-          <a
-            href={`https://vk.com/${dataGroup.screen_name}`}
-            target='_blank' rel='noopener noreferrer'
-          >
-            <GroupCell {...dataGroup} />
-          </a>
-        </div>
+
+        <OrganizerContest name={name} photo_100={photo_100} screen_name={screen_name} members_count={members_count}/>
       </div>
 
       {blocksAd && (<>

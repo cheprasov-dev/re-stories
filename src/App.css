@@ -75,3 +75,7 @@
 .Switch--android .Switch__self:checked+.Switch__pseudo  {
 	background-color: rgba(255, 146, 29, .5);
 }
+
+.Avatar__img {
+	z-index: 0;
+}
