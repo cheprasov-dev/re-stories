@@ -1,10 +1,12 @@
 import bridge from '@vkontakte/vk-bridge'
+import { getURLContest } from '../../functions/getURLContest'
 
 export async function openingStoryEditorBridge({dataStory, idContest = null}) {
   const {
     backgroundType, backgroundStory, movingBackground, degreeRotation, stickerWidth,
     valueHorizontal, valueVertical, valueAlignment
   } = dataStory
+  const link = `${getURLContest(idContest)}/?r=story`
   const props = {
     "background_type": `${backgroundType}`,
     "url": `${backgroundStory}`,
@@ -24,7 +26,7 @@ export async function openingStoryEditorBridge({dataStory, idContest = null}) {
           "action_type": "link",
           "tooltip_text_key": "Участвовать",
           "action": {
-            "link": `https://vk.com/app${process.env.REACT_APP_APP_ID}#/contest/${idContest}/?r=story`,
+            "link": link,
             "tooltip_text_key": "open"
           },
           "clickable_area": [
