@@ -12,6 +12,7 @@ import { useParams } from '@happysanta/router'
 import { getAdsBridge } from '../../../modules/API/bridge/getAdsBridge'
 import { setBlocksAd } from '../../../redux/reducers/adsReducer'
 import { setMainError } from '../../../redux/reducers/errorsReducer'
+import { getDataGroupBridge } from '../../../modules/API/bridge/getDataGroupBridge'
 
 export default function usePageContest () {
   const { id: idActiveContest } = useParams()
@@ -37,16 +38,16 @@ export default function usePageContest () {
       try {
         const { data: { error, contest } } = await getDataContestAPI({ idContest: idActiveContest, idUser })
         const { data: { error: errorCond, conditionStatus } } = await getConditionsStatusesAPI(idUser, idActiveContest)
-
         if (!error && !errorCond) {
-          dispatch(setDataActiveContest(contest))
+          const dataGroup = await getDataGroupBridge(contest.idGroup)
+          dispatch(setDataActiveContest({ ...contest, dataGroup: { ...dataGroup } }))
           dispatch(setConditionsStatuses(conditionStatus))
           const blocksAd = await getAdsBridge()
           dispatch(setBlocksAd(blocksAd))
-        }
-        else dispatch(setMainError(error))
+        } else dispatch(setMainError(error))
       } catch (error) {
-        dispatch(setMainError(error))
+        console.log(error)
+        dispatch(setMainError(true))
       }
     })()
 
@@ -63,7 +64,7 @@ function sourceIdentification ({ data }) {
   return source
 }
 
-function getUserDevice() {
+function getUserDevice () {
   const search = new URLSearchParams(window.location.search)
   return search.get('vk_platform')
 }

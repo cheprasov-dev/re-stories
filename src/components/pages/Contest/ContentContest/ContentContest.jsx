@@ -1,8 +1,8 @@
 import React from 'react'
-import { PanelHeader, PanelHeaderBack, PromoBanner, } from '@vkontakte/vkui'
+import { Header, PanelHeader, PanelHeaderBack, PromoBanner, } from '@vkontakte/vkui'
 import { useSelector, useDispatch } from 'react-redux'
-import css from './ContentContest.module.css'
-import { Background, ButtonCustom, HeaderText } from '../../../common/exportCommon'
+import css from './ContentContest.module.scss'
+import { Background, ButtonCustom, HeaderText, GroupCell } from '../../../common/exportCommon'
 import {
   MODAL_PAGE_PRIZES, MODAL_PAGE_WINNERS, PAGE_PARTICIPANTS, PAGE_TOPICS
 } from '../../../../redux/constants/routingConstants'
@@ -34,7 +34,7 @@ export default function ContentContest () {
   const dispatch = useDispatch()
 
   const {
-    active, lastFiveParticipants, countParticipants, idGroup,
+    active, lastFiveParticipants, countParticipants, idGroup, dataGroup,
     settingsStory, settingsPublicWall, settingsContest, moderationStatus
   } = dataActiveContest
 
@@ -121,6 +121,15 @@ export default function ContentContest () {
           settingsStory={settingsStory}
           idActiveContest={idActiveContest}
         />
+        <div className={css.organizer}>
+          <Header mode="secondary">Организато и ответственный</Header>
+          <a
+            href={`https://vk.com/${dataGroup.screen_name}`}
+            target='_blank' rel='noopener noreferrer'
+          >
+            <GroupCell {...dataGroup} />
+          </a>
+        </div>
       </div>
 
       {blocksAd && (<>
