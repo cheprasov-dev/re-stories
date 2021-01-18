@@ -10,7 +10,7 @@ import { setIdActiveTopic } from '../../../../redux/actionCreators/dataContestsA
 import { setTextHeader } from '../../../../redux/actionCreators/otherDataActionCreators'
 import { useRouter } from '@happysanta/router'
 import Icon24AddOutline from '@vkontakte/icons/dist/24/add_outline'
-import bridge from '@vkontakte/vk-bridge'
+import { openAppBridge } from '../../../../modules/API/bridge/openAppBridge'
 
 /*
     Главный контентс страницы PageTopics.
@@ -29,10 +29,6 @@ export default function ContentTopics () {
     dispatch(setIdActiveTopic(idTopic))
   }
 
-  function openOrganizerServes() {
-    bridge.send("VKWebAppOpenApp", {"app_id": 7486100, "location": "catalog"})
-  }
-
   return (
     <React.Fragment>
       <PanelHeader
@@ -47,13 +43,13 @@ export default function ContentTopics () {
           ><IconPersonalAccount />
           </PanelHeaderButton>
           <PanelHeaderButton
-            onClick={openOrganizerServes}
+            onClick={() => openAppBridge({page: 7486100})}
           >
             <Icon24AddOutline />
           </PanelHeaderButton>
         </>} // TODO сделать отображение количество конкурсов с незавершенными условиями
       >
-        <HeaderText mainText='ReStories' />
+        <HeaderText mainText='ReStories' text='Каталог' />
       </PanelHeader> {/* Шапка */}
       {/*<div >*/}
       {/*<SliderTopContest data={dataPopularContests} />*/}
