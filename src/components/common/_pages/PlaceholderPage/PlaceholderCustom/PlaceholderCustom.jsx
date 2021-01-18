@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './PlaceholderCustom.module.css'
-import СustomButton from "../../ButtonCustom/ButtonCustom";
+import { ButtonCustom } from '../../../exportCommon'
 
 /* (тупой компонент)
     Описание:
@@ -18,7 +18,7 @@ export default function PlaceholderCustom (props) {
     return (
         <div className={styles.center_container}>
             <div className={styles.text}>{text}</div>
-            {textButton ? <СustomButton
+            {textButton ? <ButtonCustom
                 background={'#14CEDF'}
                 disabled={disabled}
                 text={textButton}

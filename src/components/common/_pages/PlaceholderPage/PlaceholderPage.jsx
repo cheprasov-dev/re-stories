@@ -1,6 +1,6 @@
 import React from 'react'
-import Background from '../Background/Background';
 import PlaceholderCustom from './PlaceholderCustom/PlaceholderCustom';
+import { Background } from '../../exportCommon'
 
 /* (тупой компонент)
     Описание:
