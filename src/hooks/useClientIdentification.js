@@ -13,9 +13,8 @@ import { setErrorInitUser } from '../redux/reducers/errorsReducer'
 
 export function useClientIdentification () {
   const dataUser = useSelector(state => state.dataUser.mainData)
-  const router = useRouter()
-
   const dispatch = useDispatch()
+  const router = useRouter()
 
   useEffect(() => {
     (async function () {
@@ -30,7 +29,6 @@ export function useClientIdentification () {
             dispatch(upgradeDataUser(dataUser, newUser, isViewTraining)) // записываем данные пользователя
           }
         }
-
       } catch (error) {
         dispatch(setErrorInitUser(true))
       }
