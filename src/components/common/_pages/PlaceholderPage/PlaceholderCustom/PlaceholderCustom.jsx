@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './PlaceholderCustom.module.css'
+import css from './PlaceholderCustom.module.css'
 import { ButtonCustom } from '../../../exportCommon'
 
 /* (тупой компонент)
@@ -16,8 +16,12 @@ import { ButtonCustom } from '../../../exportCommon'
 export default function PlaceholderCustom (props) {
     const { text, onClick, textButton=false, disabled } = props;
     return (
-        <div className={styles.center_container}>
-            <div className={styles.text}>{text}</div>
+        <div className={css.center_container}>
+          <div className={css.container}>
+            <div className={css.div_logo} />
+            <div className={css.name_app}>ReStories</div>
+          </div>
+            <div className={css.text}>{text}</div>
             {textButton ? <ButtonCustom
                 background={'#14CEDF'}
                 disabled={disabled}

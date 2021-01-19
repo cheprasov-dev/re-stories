@@ -12,3 +12,29 @@
     text-align: center;
     margin-bottom: 40px;
 }
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.div_logo {
+    background-image: url(../../../../../assets/img/logo.png);
+    background-size: cover;
+    display: flex;
+    width: 103px;
+    height: 103px;
+    margin: 14px;
+    border-radius: 19px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.name_app {
+    font-weight: 700;
+    font-size: 20px;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 45px;
+}
