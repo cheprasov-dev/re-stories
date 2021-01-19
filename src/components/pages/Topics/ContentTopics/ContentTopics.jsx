@@ -43,7 +43,7 @@ export default function ContentTopics () {
           ><IconPersonalAccount />
           </PanelHeaderButton>
           <PanelHeaderButton
-            onClick={() => openAppBridge({page: 7486100})}
+            onClick={() => openAppBridge({ page: 7486100 })}
           >
             <Icon24AddOutline />
           </PanelHeaderButton>
