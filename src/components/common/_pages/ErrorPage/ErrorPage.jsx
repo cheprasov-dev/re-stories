@@ -6,7 +6,6 @@ import { useDispatch } from 'react-redux'
 import { useFirstPageCheck, useRouter } from '@happysanta/router'
 import { setMainError } from '../../../../redux/reducers/errorsReducer'
 import { PAGE_TOPICS } from '../../../../redux/constants/routingConstants'
-import { setSource } from '../../../../redux/actionCreators/dataUserActionCreators'
 
 /*
   Диспачить типы ошибок и в контейнере получать
@@ -19,10 +18,8 @@ export default function ErrorPage ({ isInitError }) {
   let dispatch = useDispatch()
 
   function onClickBack () {
-    if (isFirstPage) {
-      router.pushPage(PAGE_TOPICS)
-      dispatch(setSource('catalog contests'))
-    } else router.popPage()
+    if (isFirstPage) router.pushPage(PAGE_TOPICS)
+    else router.popPage()
     dispatch(setMainError(null))
   }
 
