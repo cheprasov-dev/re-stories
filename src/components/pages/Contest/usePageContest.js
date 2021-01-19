@@ -26,13 +26,15 @@ export default function usePageContest () {
 
   useEffect(() => {
     (async function () {
-      const device = getUserDevice()
-      setAnalyticsContestAPI({
-        idUser,
-        source: source || sourceIdentification({ data }),
-        device,
-        idContest: idActiveContest
-      })
+      if (data.isOrg !== '1') {
+        const device = getUserDevice()
+        setAnalyticsContestAPI({
+          idUser,
+          source: source || sourceIdentification({ data }),
+          device,
+          idContest: idActiveContest
+        })
+      }
 
       try {
         const { data: { error, contest } } = await getDataContestAPI({ idContest: idActiveContest, idUser })
