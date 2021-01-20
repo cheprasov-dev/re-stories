@@ -7,7 +7,7 @@ import { GroupCell } from '../../../../common/exportCommon'
 export default function OrganizerContest ({members_count, screen_name, photo_100, name}) {
   return (
     <div className={css.organizer}>
-      <Header mode="secondary">Организато и ответственный</Header>
+      <Header mode="secondary">Организатор и ответственный</Header>
       <a
         href={`https://vk.com/${screen_name}`}
         target='_blank' rel='noopener noreferrer'
