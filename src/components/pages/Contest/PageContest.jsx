@@ -13,17 +13,15 @@ export default function PageContest () {
   usePageContest()
 
   return (
-    <React.Fragment>
+    <>
       {!_isNull(mainError)
         ? <ErrorPage /> // ошибка
-        : <React.Fragment>
-          {dataActiveContest
-            ? dataActiveContest.moderationStatus === 1
-              ? <ContentContest /> // основная информация
-              : <ErrorPage />
-            : <LoadingPage imgBG={true} />} {/* загрузка*/}
-        </React.Fragment>
+        : dataActiveContest
+          ? dataActiveContest.moderationStatus === 1
+            ? <ContentContest /> // основная информация
+            : <ErrorPage />
+          : <LoadingPage imgBG={true} />
       }
-    </React.Fragment>
+    </>
   )
 }

@@ -9,7 +9,6 @@ export const { default: SliderTopContest } = require("./SliderTopContest/SliderT
 export const { default: SmallSpinner } = require("./SmallSpinner/SmallSpinner")
 export const { default: UserCell } = require("./UserCell/UserCell")
 export const { default: HeaderText } = require("./HeaderText/HeaderText")
-export const { default: Markdown } = require("./Markdown/Markdown")
 export const { default: GroupCell } = require("./GroupCell/GroupCell")
 
 export const { default: LoadingPage } = require("./_pages/LoadingPage/LoadingPage")

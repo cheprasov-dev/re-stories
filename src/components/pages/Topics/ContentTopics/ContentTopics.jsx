@@ -7,10 +7,10 @@ import TableTopics from './TableTopics/TableTopics'
 import { IconPersonalAccount } from '../../../icon/exportIcon'
 import { PAGE_PERSONAL_ACCOUNT, PAGE_CONTESTS_TOPIC } from '../../../../redux/constants/routingConstants'
 import { setIdActiveTopic } from '../../../../redux/actionCreators/dataContestsActionCreators'
-import { setTextHeader } from '../../../../redux/actionCreators/otherDataActionCreators'
 import { useRouter } from '@happysanta/router'
 import Icon24AddOutline from '@vkontakte/icons/dist/24/add_outline'
 import { openAppBridge } from '../../../../modules/API/bridge/openAppBridge'
+import { setTextHeader } from '../../../../redux/reducers/otherDataReducer'
 
 /*
     Главный контентс страницы PageTopics.
@@ -43,7 +43,7 @@ export default function ContentTopics () {
           ><IconPersonalAccount />
           </PanelHeaderButton>
           <PanelHeaderButton
-            onClick={() => openAppBridge({ page: 7486100 })}
+            onClick={() => openAppBridge({ page: 7705671 })}
           >
             <Icon24AddOutline />
           </PanelHeaderButton>

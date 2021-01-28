@@ -1,5 +1,8 @@
 import { otherDataInitState } from '../initState'
-import { SET_TEXT_HEADER } from '../actions/otherDataAction'
+
+const SET_TEXT_HEADER = 'OTHER_DATA/SET_TEXT_HEADER';
+
+export const setTextHeader = (textHeader) => ({ type: SET_TEXT_HEADER, payload: { textHeader } })
 
 export function otherDataReducer (state = otherDataInitState, action) {
   switch (action.type) {

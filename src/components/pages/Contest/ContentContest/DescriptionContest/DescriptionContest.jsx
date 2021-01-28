@@ -31,8 +31,8 @@ export default function DescriptionContest({titleContest, descriptionContest}) {
         {titleContest}
       </div>
       <div id={css.collapsed} className={css.text}>
-        <div id='markdown'>
-          <Markdown children={descriptionContest}/>
+        <div id='markdown' style={{whiteSpace: 'pre-wrap'}}>
+          {descriptionContest}
         </div>
       </div>
       {displayButton && (

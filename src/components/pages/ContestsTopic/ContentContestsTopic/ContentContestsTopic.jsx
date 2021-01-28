@@ -8,9 +8,9 @@ import {
   SelectTopics, HeaderText,
 } from '../../../common/exportCommon'
 import { PAGE_CONTEST } from '../../../../redux/constants/routingConstants'
-import { setTextHeader } from '../../../../redux/actionCreators/otherDataActionCreators'
 import { useRouter } from '@happysanta/router'
 import { setSource } from '../../../../redux/actionCreators/dataUserActionCreators'
+import { setTextHeader } from '../../../../redux/reducers/otherDataReducer'
 
 /*
     Главный контентс страницы PageContestsTopic.
