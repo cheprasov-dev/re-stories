@@ -20,26 +20,4 @@ const routers = {
 
 export const router = new Router(routers)
 
-// колбек при открытие страницы page
-// router.onEnterPage(page, () => {
-//
-// })
-
-// router.on('update', (nextRote, oldRoute) => {
-//   nextRote.getPageId() // /product/:id([0-9]+)
-//   nextRote.getParams() // { id: "12" }
-//   nextRote.getPanelId() // panel_product
-//   nextRote.getViewId() // view_main
-//   nextRote.getLocation() // /product/12
-//   nextRote.isModal() // false
-//   nextRote.isPopup() // false
-//   nextRote.hasOverlay() // false
-//   console.log(oldRoute)
-//   if (oldRoute) {
-//     console.log(`move from page ${oldRoute.getLocation()} -> ${nextRote.getLocation()}`)
-//   } else {
-//     console.log(`enter to page ${nextRote.getLocation()}`)
-//   }
-// })
-
 router.start()
